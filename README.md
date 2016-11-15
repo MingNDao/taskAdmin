@@ -8,3 +8,9 @@
 
 # 代码规范
 - 代码严格按照 ESLint 默认规范
+
+# 运行
+``` bash
+$ npm install
+$ npm run test
+```
