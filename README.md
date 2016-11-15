@@ -14,3 +14,5 @@
 $ npm install
 $ npm run test
 ```
+
+# VS Code上传测试
