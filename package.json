@@ -1,0 +1,24 @@
+{
+  "name": "taskadmin",
+  "version": "0.0.1",
+  "description": "个人任务管理系统",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MingNDao/taskAdmin.git"
+  },
+  "keywords": [
+    "nodejs",
+    "vue",
+    "taskAdmin"
+  ],
+  "author": "dfy30866@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MingNDao/taskAdmin/issues"
+  },
+  "homepage": "https://github.com/MingNDao/taskAdmin#readme"
+}
