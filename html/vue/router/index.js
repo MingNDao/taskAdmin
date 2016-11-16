@@ -11,6 +11,7 @@ const routes = [
   { path:'', component:Index }
 ]
 routes.push(admin)
+
 const router = new Router({
   routes
 })

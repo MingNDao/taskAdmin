@@ -1,3 +1,7 @@
 <template>
-  <div id="app">首页</div>
+  <div class="app">
+    <nav>
+      <router-link to="/admin">后台管理页面</router-link>
+    </nav>
+  </div>
 </template>
