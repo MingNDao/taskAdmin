@@ -11,3 +11,7 @@ gulp.task('vue',() => {
       .bundle()
       .pipe(fs.createWriteStream('./html/dist/index.js'))
 })
+
+gulp.task('default',() => {
+    gulp.watch(['./html/vue/**/*.*'],['vue'])
+})
