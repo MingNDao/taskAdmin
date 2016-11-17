@@ -30,28 +30,29 @@
                 queryList:[]                
             }
         },
-        methods: {
-            addNumer () {
-                let name = this.item.name;
-                let number = this.item.number;
-                if(name&&number){
-                    localStorage.setItem(name,number);
-                    alert('添加成功！');
-                    location.reload();
-                }else{
-                    alert('请输入姓名和手机号码');
+        methods () {
+            return {
+                addNumer () {
+                    let name = this.item.name;
+                    let number = this.item.number;
+                    if(name&&number){
+                        localStorage.setItem(name,number);
+                        alert('添加成功！');
+                        location.reload();
+                    }else{
+                        alert('请输入姓名和手机号码');
+                    }
+                },
+                query () {
+                    let dataLength = localStorage.length;
+                    let dataList = [];
+                    for(let i = 0;i < dataLength;i++){
+                        var newItem = {name:localStorage.key(i),number:localStorage.getItem(localStorage.key(i))};
+                        dataList.unshift(newItem);
+                    }
+                    this.queryList = dataList;
+                    // console.log(this.queryList);
                 }
-            },
-
-            query () {
-                let dataLength = localStorage.length;
-                let dataList = [];
-                for(let i = 0;i < dataLength;i++){
-                    var newItem = {name:localStorage.key(i),number:localStorage.getItem(localStorage.key(i))};
-                    dataList.unshift(newItem);
-                }
-                this.queryList = dataList;
-                // console.log(this.queryList);
             }
         },
         created () {
