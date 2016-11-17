@@ -20,5 +20,5 @@ export default {
 }
 </script>
 <style>
-  .node{padding:8px 15px;font-size:16px;}
+  .node{padding:8px 15px;font-size:16px;color: inherit;}
 </style>
