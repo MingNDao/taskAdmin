@@ -1,5 +1,5 @@
 <template>
-  <div>{{ text }}</div>
+  <div>{{ text }}aaa</div>
 </template>
 <script>
 export default {
