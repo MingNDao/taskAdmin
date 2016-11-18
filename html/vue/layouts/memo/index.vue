@@ -25,7 +25,7 @@
         },
         methods () {
             return {
-                addNumer () {
+                addNumer () {       // 添加姓名和号码
                     let name = this.item.name;
                     let number = this.item.number;
                     if(name&&number){
@@ -36,7 +36,7 @@
                         alert('请输入姓名和手机号码');
                     }
                 },
-                query () {
+                query () {      // 添加完查询数据渲染到表格
                     let dataLength = localStorage.length;
                     let dataList = [];
                     for(let i = 0;i < dataLength;i++){
