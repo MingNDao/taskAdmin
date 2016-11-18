@@ -1,24 +1,17 @@
-
 <template>
-    <div>
-        姓名：<el-input placeholder="请输入内容" v-model="item.name"></el-input><br>
-        手机号码：<el-input placeholder="请输入内容" v-model="item.number"></el-input><br>
-        <el-button type="primary" @click="addNumer">添加</el-button><br>
-        列表：
-        <el-table
-        :data="queryList"
-        style="width: 100%">
-        <el-table-column
-            prop="name"
-            label="姓名">
-        </el-table-column>
-        <el-table-column
-            prop="number"
-            label="电话">
-        </el-table-column>
-        </el-table>
-    </div>
-        
+	<div>
+		姓名：
+		<el-input placeholder="请输入内容" v-model="item.name"></el-input><br> 手机号码：
+		<el-input placeholder="请输入内容" v-model="item.number"></el-input><br>
+		<el-button type="primary" @click="addNumer">添加</el-button><br> 列表：
+		<el-table :data="queryList" style="width: 100%">
+			<el-table-column prop="name" label="姓名">
+			</el-table-column>
+			<el-table-column prop="number" label="电话">
+			</el-table-column>
+		</el-table>
+	</div>
+
 
 </template>
 <script>
