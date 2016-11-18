@@ -1,24 +1,17 @@
-
 <template>
-    <div>
-        姓名：<el-input placeholder="请输入内容" v-model="item.name"></el-input><br>
-        手机号码：<el-input placeholder="请输入内容" v-model="item.number"></el-input><br>
-        <el-button type="primary" @click="addNumer">添加</el-button><br>
-        列表：
-        <el-table
-        :data="queryList"
-        style="width: 100%">
-        <el-table-column
-            prop="name"
-            label="姓名">
-        </el-table-column>
-        <el-table-column
-            prop="number"
-            label="电话">
-        </el-table-column>
-        </el-table>
-    </div>
-        
+	<div>
+		姓名：
+		<el-input placeholder="请输入内容" v-model="item.name"></el-input><br> 手机号码：
+		<el-input placeholder="请输入内容" v-model="item.number"></el-input><br>
+		<el-button type="primary" @click="addNumer">添加</el-button><br> 列表：
+		<el-table :data="queryList" style="width: 100%">
+			<el-table-column prop="name" label="姓名">
+			</el-table-column>
+			<el-table-column prop="number" label="电话">
+			</el-table-column>
+		</el-table>
+	</div>
+
 
 </template>
 <script>
@@ -32,7 +25,7 @@
         },
         methods () {
             return {
-                addNumer () {
+                addNumer () {       // 添加姓名和号码
                     let name = this.item.name;
                     let number = this.item.number;
                     if(name&&number){
@@ -43,7 +36,7 @@
                         alert('请输入姓名和手机号码');
                     }
                 },
-                query () {
+                query () {      // 添加完查询数据渲染到表格
                     let dataLength = localStorage.length;
                     let dataList = [];
                     for(let i = 0;i < dataLength;i++){
@@ -51,7 +44,6 @@
                         dataList.unshift(newItem);
                     }
                     this.queryList = dataList;
-                    // console.log(this.queryList);
                 }
             }
         },
