@@ -44,7 +44,6 @@
                         dataList.unshift(newItem);
                     }
                     this.queryList = dataList;
-                    // console.log(this.queryList);
                 }
             }
         },

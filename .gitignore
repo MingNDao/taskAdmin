@@ -1,3 +1,4 @@
 node_modules
 .vscode
 html/dist/addons
+html/dist/index.js
