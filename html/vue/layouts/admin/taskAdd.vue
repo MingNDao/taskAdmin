@@ -1,6 +1,6 @@
 <template>
 <div>
-  <el-form :inline="true" :model="createForm" class="block">
+  <el-form :inline="true" :model="createForm" class="createForm-panel block">
     <el-form-item>
       <el-input v-model="createForm.dbName"></el-input>
     </el-form-item>
@@ -11,8 +11,40 @@
       <el-button v-if = "db" v-on:click="getData">获取数据</el-button>
     </el-form-item>
   </el-form>
-  <div>
-    <div v-for = "item in tasks">{{item}}</div>
+  <div class="block">
+    <el-form :model="createTask" label-width = "80px">
+      <el-form-item label="任务名:">
+        <el-input v-model="createTask.name"></el-input>
+      </el-form-item>
+      <el-form-item label="任务描述:">
+        <el-input type="textarea" v-model="createTask.description"></el-input>
+      </el-form-item>      
+    </el-form>
+  </div>
+  <div class="block">
+    <el-table
+      :data = "tasks"
+    >
+      <el-table-column
+        type = 'index'
+        label = '序号'
+        width = "80"
+      ></el-table-column>
+      <el-table-column
+        prop = 'id'
+        label = 'id'
+        width = '180'
+        sortable
+      ></el-table-column>
+      <el-table-column
+        prop = 'name'
+        label = '任务名'
+      ></el-table-column>
+      <el-table-column
+        prop = 'description'
+        label = '任务描述'
+      ></el-table-column>      
+    </el-table>
   </div>
 </div>
 </template>
@@ -23,6 +55,10 @@ export default {
     return {
       createForm: {
         dbName: "taskDB"
+      },
+      createTask: {
+        name: '',
+        description: ''
       },
       db: null,
       tasks: [],
@@ -63,10 +99,11 @@ export default {
           this.name = "任务"
         }
       }
+      this.createTask.id = parseInt((new Date()).getTime() + getRandom())
       let _self = this
       let transaction = this.db.transaction('tasks', 'readwrite')
       let store = transaction.objectStore('tasks')
-      store.add(new task()).onsuccess = () => {
+      store.add(this.createTask).onsuccess = () => {
         _self.getData()
       }
     },
@@ -95,5 +132,5 @@ export default {
 </script>
 <style>
   .block {margin:20px;padding:15px;border-radius:15px; border:solid 1px #ccc;}
-  .block .el-form-item{margin-bottom: 0}
+  .createForm-panel .el-form-item{margin-bottom: 0}
 </style>
